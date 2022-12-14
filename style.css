@@ -1,0 +1,60 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+body{
+    padding: 40px;
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00ff6c);
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-contents: center;
+    min-height: 80vh;        
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2em;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+
+.calculator-grid > button:hover{
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+
+.output{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);     
+    display: flex;                                /*align the operands inside the container ie the black box */
+    align-items: flex-end;                        /* to make the operands be at the right hand side of the box */
+    justify-content: space-around;               /* it gives space between the two operands*/
+    flex-direction: column;                       /* to make the operands be vertical instead of side by side */
+    padding: 10px;                                /* to push the two operands away from the top */
+    word-wrap: break-word;                        /* this happens when digits fill up the first space, it moves to the next*/
+    word-break: break-all;
+}
+
+.output .previous-operand{
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
+
